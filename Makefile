@@ -2,18 +2,16 @@ WARNING = -Wall -Wshadow --pedantic
 ERROR = -Wvla -Werror
 GCC = gcc -std=c99 -g $(WARNING) $(ERROR) 
 
-TESTFLAGS = -DTEST_ADDFILE -DTEST_WRITESUM # -DDEBUG
-
 SRCS = main.c
 OBJS = $(SRCS:%.c=%.o)
 
 # diff -w means do not care about space
 
 a1: $(OBJS) 
-	$(GCC) $(TESTFLAGS) $(OBJS) -o a1
+	$(GCC) $(OBJS) -o a1
 
 .c.o: 
-	$(GCC) $(TESTFLAGS) -c $*.c 
+	$(GCC) -c $*.c 
 
 testall: test1 test2 test3
 
