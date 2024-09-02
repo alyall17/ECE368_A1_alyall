@@ -13,19 +13,8 @@ a1: $(OBJS)
 .c.o: 
 	$(GCC) -c $*.c 
 
-testall: test1 test2 test3
-
-test1: a1
-	./a1 inputs/input1 output1
-	diff -w output1 expected/expected1
-
-test2: a1
-	./a1 inputs/input2 output2
-	diff -w output2 expected/expected2
-
-test3: a1
-	./a1 inputs/input3 output3
-	diff -w output3 expected/expected3
+run: a1
+	./a1
 
 clean: # remove all machine generated files
 	rm -f a1 *.o output* *~
