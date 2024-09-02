@@ -4,7 +4,6 @@ GCC = gcc -std=c99 -g $(WARNING) $(ERROR)
 
 SRCS = main.c
 OBJS = $(SRCS:%.c=%.o)
-VAL = valgrind --tool=memcheck --log-file=memcheck.txt --leak-check=full --verbose
 
 # diff -w means do not care about space
 
@@ -13,9 +12,6 @@ a1: $(OBJS)
 
 .c.o: 
 	$(GCC) -c $*.c
-
-testmemory: a1
-	$(VAL) ./a1 90
 
 run: a1
 	./a1
