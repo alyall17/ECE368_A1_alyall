@@ -34,7 +34,7 @@ void printCombos(int cents){
     const int QUARTER = 25;
     const int DIME = 10;
     const int NICKEL = 5;
-    const int PENNY = 1;
+ //   const int PENNY = 1;
 
     // ARRAYS AND VARIABLES
     int combos[10000][4]; // Coin combos array
@@ -49,7 +49,7 @@ void printCombos(int cents){
     // Brute force approach to generating all combos
     for(q = 0; q <= cents / QUARTER; q++){
         for(d = 0; d <= (cents - q * QUARTER) / DIME; d++){
-            for(n = 0; (cents - q * QUARTER - d * DIME) / NICKEL; n++){
+            for(n = 0; n <= (cents - q * QUARTER - d * DIME) / NICKEL; n++){
                 p = cents - q * QUARTER - d * DIME - n * NICKEL;
                 if(p >= 0){
                     combos[numCombos][0] = q;
@@ -70,11 +70,9 @@ void printCombos(int cents){
         printf("%d quarter(s), %d dime(s), %d nickel(s), %d pennie(s)\n",
                 combos[i][0], combos[i][1], combos[i][2], combos[i][3]);
     }
-
-    return(0);
 }
 
-int main(){
+int main(void){
     // VARIABLES
     int cents; // Inputted cent value
 
@@ -85,5 +83,5 @@ int main(){
     // Print all valid combinations
     printCombos(cents);
 
-    return(0);
+    return 0;
 }
