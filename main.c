@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 // Bubble sort algorithm for coin combinations
 void bubbleSort(int combos[][4], int numCombos){
@@ -34,11 +35,10 @@ void printCombos(int cents){
     const int QUARTER = 25;
     const int DIME = 10;
     const int NICKEL = 5;
- //   const int PENNY = 1;
 
     // ARRAYS AND VARIABLES
-    int combos[10000][4]; // Coin combos array
-    int numCombos = 0; // Total number of combinations for a specific input
+    int combos[10000][4]; // Array to store all possible combinations
+    int numCombos = 0; // Total number of combos
     int q; // Quarters lcv (loop control variable)
     int d; // Dimes lcv
     int n; // Nickels lcv
