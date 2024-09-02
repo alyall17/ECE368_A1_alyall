@@ -77,7 +77,7 @@ int main(void){
     int cents; // Inputted cent value
 
     // EXECUTABLE STATEMENTS
-    printf("Enter the number of cents: ");
+//    printf("Enter the number of cents: ");
     scanf("%d", &cents);
 
     // Print all valid combinations
